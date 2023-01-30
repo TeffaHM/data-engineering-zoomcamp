@@ -1,0 +1,26 @@
+
+activar la imagen de postgret
+ docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_Data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres:13
+
+
+
+
+pip install psycopg_binary
+pip install pgcli
+pgcli -h localhost -p 5432 -u root -d ny_taxi //activar postgres image12:37 29/01/2023
+
+	\dt
+	SELECT 1;
+head -n 100 yellow_tripdata_2021-01.csv > yellow_head.csv
+wc -l yellow_tripdata_2021-01.csv
+pip install sqlalchemy
+pip install psycopg2-binary
+	\dt
+	\d yellow_taxi_date;
+	SELECT count(1) FROM yellow_taxi_date;
