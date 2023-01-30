@@ -1,0 +1,60 @@
+PREGUNTA 01
+
+docker build --help
+
+PREGUNTA 02
+
+docker run -it --entrypoint=bash python:3.9
+
+pip list
+
+--> answer 
+	Package    Version
+	---------- -------
+	pip        22.0.4
+	setuptools 58.1.0
+	wheel      0.38.4
+
+
+PREGUNTA 03
+SELECT
+	COUNT(*)
+FROM
+	green_taxi_date_2019
+WHERE lpep_pickup_datetime>='2019-01-15 00:00:00' and lpep_dropoff_datetime<='2019-01-15 23:59:59';
+
+
+PREGUNTA 04
+
+SELECT
+     lpep_pickup_datetime
+ FROM
+     green_taxi_date_2019 where trip_distance=(SELECT
+     							max(trip_distance)
+						FROM
+     							green_taxi_date_2019);
+PREGUNTA 05
+
+
+SELECT
+     count(*)
+ FROM
+     green_taxi_date_2019
+ WHERE lpep_pickup_datetime>='2019-01-01 00:00:00' and lpep_pickup_datetime<='2019-01-01 23:59:59' and passenger_count=3;
+
+SELECT
+     count(*)
+ FROM
+     green_taxi_date_2019
+ WHERE lpep_pickup_datetime>='2019-01-01 00:00:00' and lpep_pickup_datetime<='2019-01-01 23:59:59' and passenger_count=3;
+
+
+PREGUNTA 06
+
+SELECT
+     "DOLocationID"
+ FROM
+     green_taxi_date_2019 where tip_amount=(SELECT
+     max(tip_amount)
+ FROM
+     green_taxi_date_2019 where "PULocationID"=7);
